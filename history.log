@@ -319,3 +319,5 @@ func removeColor(colors map[string]string, key string) {
 
  var dur Duration
  dur = Duration(1000)
+
+ type IP []byte
