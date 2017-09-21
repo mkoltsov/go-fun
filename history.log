@@ -321,3 +321,24 @@ func removeColor(colors map[string]string, key string) {
  dur = Duration(1000)
 
  type IP []byte
+
+ import "runtime"
+
+// Allocate a logical processor for every available core.
+runtime.GOMAXPROCS(runtime.NumCPU())
+
+go build -race
+// Unbuffered channel of integers.
+unbuffered := make(chan int)
+
+// Buffered channel of strings.
+buffered := make(chan string, 10)
+
+// Buffered channel of strings.
+buffered := make(chan string, 10)
+
+// Send a string through the channel.
+buffered <- "Gopher"
+
+// Receive a string from the channel.
+value := <-buffered
