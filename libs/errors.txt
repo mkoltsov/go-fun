@@ -1,0 +1,1 @@
+ERROR: 2017/09/25 09:15:30 custom_logger.go:47: Something has failed
