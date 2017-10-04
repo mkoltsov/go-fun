@@ -41,7 +41,7 @@
 
  // createTask returns an example task that sleeps for the specified
  // number of seconds based on the id.
- func createTask() func(int) {
+ func createTask() func(int) {x
      return func(id int) {
          log.Printf("Processor - Task #%d.", id)
          time.Sleep(time.Duration(id) * time.Second)

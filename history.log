@@ -342,3 +342,9 @@ buffered <- "Gopher"
 
 // Receive a string from the channel.
 value := <-buffered
+
+go test -cover
+
+go test -coverprofile=coverage.out 
+go tool cover -func=coverage.out
+go tool cover -html=coverage.out
