@@ -348,3 +348,53 @@ go test -cover
 go test -coverprofile=coverage.out 
 go tool cover -func=coverage.out
 go tool cover -html=coverage.out
+
+type EventFlags6 struct {
+        Deletable bool  
+        Ignorable bool 
+}
+
+type EventMapping3 struct {
+        Events map[string][]string   
+}
+
+type Config9 struct {
+  Events map[string][]EventFlags6
+}
+
+var data9=`
+events:
+  TASK_KILLING:
+    deletable: true
+    ignorable: true
+  TASK_RUNNING:
+    ignorable: true
+`
+var data5 = `
+events:
+ TASK_KILLING
+   - isDeletable
+   - isIgnorable
+
+ TASK_RUNNING
+   - isIgnorable
+`
+
+datay:=`---
+events:
+  TASK_KILLING:
+    deletable: true
+    ignorable: false
+  TASK_RUNNING:
+    deletable: false
+    ignorable: false`
+
+type Configy struct {
+    Events map[string]Optionsy
+}
+
+type Optionsy struct {
+    Deletable bool
+    Ignorable bool
+}
+
